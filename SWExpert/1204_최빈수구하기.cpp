@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int arr[101] = {0,};
-
+¤Ì 
 int main(void){
 	int T,t_c,tmp,ans,freq;
 	scanf("%d",&T);
