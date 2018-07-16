@@ -12,16 +12,6 @@ Node blue[SIZE*SIZE];
 int r,b;
 
 int map[SIZE][SIZE];
-//
-//void display(void){
-//	for(int i=0; i<SIZE; ++i){
-//		for(int j=0; j<SIZE; ++j){
-//			printf("%d",map[i][j]);
-//		}
-//		printf("\n");
-//	}
-//	printf("\n");
-//}
 
 int isOnMap(int y, int x){
 	return x>=0 && x<SIZE && y>=0 &&y<SIZE;
@@ -34,7 +24,6 @@ int get_deadlock(){
 		ny=red[i].y;
 		if(isOnMap(ny+1,nx) && map[ny+1][nx] == 2)
 			ret++;
-	
 	}
 	return ret;
 }
@@ -72,8 +61,6 @@ void solve(){
 
 int main(void){
 	int ans,n;
-	freopen("input.txt","r",stdin);
-//	freopen("sample_input.txt","r",stdin);
 
 	for(int t=1; t<=10; ++t){
 		ans=r=b=0;
@@ -92,9 +79,7 @@ int main(void){
 				}
 			}
 		}
-//		display();
 		solve();
-//		display();
 		ans = get_deadlock();
 		printf("#%d %d\n",t,ans);	
 	}
