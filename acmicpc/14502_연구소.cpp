@@ -6,7 +6,7 @@ using namespace std;
 int n,m,vCnt,ans,arr[3];
 int dx[4]={1,0,-1,0};
 int dy[4]={0,1,0,-1};
-vector<vector<int> > map(8,vector<int>(8,0));
+int map[8][8];
 typedef struct Pos{
 	int x,y;
 }Pos;
@@ -18,7 +18,7 @@ int isOnMap(int y,int x){
 	return x>=0 && x<m && y>=0 && y<n;
 }
 
-int getCnt(vector<vector<int> > map){
+int getCnt(int map[8][8]){
 	int ret=0;
 	for(int i=0;i<n;++i){
 		for(int j=0;j<m;++j){
@@ -28,7 +28,7 @@ int getCnt(vector<vector<int> > map){
 	return ret;
 }
 
-void fill(vector<vector<int> > &map, int y, int x){
+void fill(int map[8][8], int y, int x){
 	for(int d=0;d<4;++d){
 		int nx=dx[d]+x;
 		int ny=dy[d]+y;
@@ -42,7 +42,7 @@ void fill(vector<vector<int> > &map, int y, int x){
 
 void solve(int idx, int cnt, int N, int r){
 	if(cnt==r){
-		vector<vector<int> > dupeMap(8,vector<int>(8,0));
+		int dupeMap[8][8];
 		for(int i=0;i<n;++i){
 			for(int j=0;j<m;++j){
 				dupeMap[i][j] = map[i][j];
